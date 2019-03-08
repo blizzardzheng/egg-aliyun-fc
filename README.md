@@ -59,6 +59,15 @@ see [config/config.default.js](config/config.default.js) for more detail.
 ## Example
 
 <!-- example here -->
+```js
+export default class  queryService extends Service {
+  async test() {
+   const fc = this.ctx.fc;
+   const res = await fc.getFunctionCode('anymock', 'handler')// 这里的详细api请参见 http://doxmate.cool/aliyun/fc-nodejs-sdk/api.html#client__createFunction
+  }
+} 
+
+```
 
 ## Questions & Suggestions
 
