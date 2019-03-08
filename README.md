@@ -63,9 +63,22 @@ see [config/config.default.js](config/config.default.js) for more detail.
 export default class  queryService extends Service {
   async test() {
    const fc = this.ctx.fc;
-   const res = await fc.getFunctionCode('anymock', 'handler')// 这里的详细api请参见 http://doxmate.cool/aliyun/fc-nodejs-sdk/api.html#client__createFunction
+   const functioncode = await fc.getFunctionCode('anymock', 'handler')// 这里的详细api请参见 http://doxmate.cool/aliyun/fc-nodejs-sdk/api.html#client__createFunction
+   const functioncode1 = await fc.createFunction('iat_anymock', {
+        functionName: 'xxx',
+        handler: 'main.handler',
+        runtime: 'nodejs8',
+        memorySize: 100,
+        timeout: 5,
+        code: `
+          function(event, context, callback) { 
+            console.log('hello world');
+            callback(null, 'hello world'); 
+          }
+        `
+      }); // 增加了string形式的create 和update
   }
-} 
+}
 
 ```
 
