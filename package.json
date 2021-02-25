@@ -1,6 +1,6 @@
 {
   "name": "egg-aliyun-fc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "aliyun fc for egg",
   "eggPlugin": {
     "name": "aliyunFc"
