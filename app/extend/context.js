@@ -8,7 +8,6 @@ module.exports = {
    * @see App#oss
    */
   get fc() {
-    console.log(this.app, this.app.aliyunFc);
     return this.app.aliyunFc;
   },
 };
